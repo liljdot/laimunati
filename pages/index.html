@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laimunati Group</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Lato';
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            color: black;
+        }
+
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        #fullOverlay {
+            position: fixed;
+            height: 100%;
+            width: 390px;
+            background-color: #00000000;
+            top: 46px;
+            z-index: 5;
+            display: none;
+            transition: all 2s ease;
+        }
+
+        #fullOverlay #sandwichNav {
+            background-color: #f7f7f7;
+            margin: 20px auto;
+            height: 75px;
+            width: 363px;
+        }
+
+        nav.header {
+            background-color: #f7f7f70F;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            height: 109px;
+            width: 100%;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            z-index: 3;
+            overflow-y: visible;
+        }
+
+        figure {
+            background-size: contain;
+        }
+
+        figure.logo {
+            height: 24px;
+            width: 26.62px;
+        }
+
+        .sign {
+            display: inline-flex;
+            flex-direction: row;
+            gap: 8px;
+            padding: 42.5px 99px;
+        }
+
+        .sign:hover {
+            cursor: pointer;
+        }
+
+        .logoName {
+            margin: auto 0;
+            font-family: 'Lato';
+            color: #007334;
+        }
+
+        h5.logoName {
+            font-size: 24px;
+        }
+
+        #sandwich {
+            display: none;
+        }
+
+
+
+        nav ul {
+            float: right;
+            margin-right: 99px;
+        }
+
+        nav ul .navlinkitem {
+            display: inline;
+            line-height: 109px;
+            margin-left: 53px;
+        }
+
+        nav ul .navlink li {
+            font-size: 20px;
+            font-weight: bold;
+            height: 25px;
+        }
+
+        nav ul .navlink li:hover {
+            color: #019946;
+        }
+
+        nav ul li .navlink {
+            font-size: 20px;
+            font-weight: bold;
+            height: 25px;
+        }
+
+        nav ul li .navlink:hover{
+            color: #019946;
+        }
+
+        nav ul li a img {
+            margin-left: 8px;
+            transform: translateY(4px);
+        }
+
+        .ourbiz {
+            position: relative;
+        }
+
+        div#dropdown {
+            height: 200px;
+            width: 100%;
+            height: 256px;
+            border-radius: 10px;
+            background-color: red;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            padding: 0;
+            z-index: 6;
+        }
+
+        div#dropdown ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            background-color: #f7f7f7;
+            height: 100%;
+            width: 100%;
+            padding-top: 0;
+            border-radius: 10px;
+        }
+
+        .ourbiz:hover #dropdown {
+            display: flex;
+        }
+
+        .ourbiz #dropdown .dropdownItem .item {
+            margin: 0 auto;
+            padding-top: 20px;
+            height: 64px;
+            width: 80%;
+            line-height: 110%;
+            font-size: 20px;
+            border-image: linear-gradient(to right, #DE6741, #1EB641) 30;
+            border-width: 2px;
+            border-style: solid;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+        }
+
+        .ourbiz #dropdown .dropdownItem:hover {
+            background-color: lightgrey;
+            border-radius: 10px;
+        }
+
+
+        .bgImg {
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        #map {
+            top: 116px;
+            height: 576px;
+        }
+
+        h2 {
+            line-height: 100px;
+            text-align: center;
+            width: 350px;
+            height: 104px;
+            margin: 0 auto;
+            margin-top: 93px;
+            font-size: 32px;
+        }
+
+        .welcomeMessage {
+            margin: 0 auto;
+            background: linear-gradient(to right, #de6741, #1eb641);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        .welcomeMessage h1 {
+            font-size: 128px;
+            width: 1177px;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: lighter;
+        }
+
+        .slogan {
+            width: 1067px;
+            height: 96px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 48px;
+            margin: 0 auto;
+            margin-top: 50px;
+            color: #505050;
+        }
+
+        .carouselContainer {
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .sliderWrapper {
+            position: relative;
+            max-width: 1245px;
+            margin: 0 auto;
+        }
+
+        .slider {
+            display: flex;
+            height: 759px;
+            width: 1245px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0% 0.25);
+            border-radius: 0.5rem;
+            margin: 0 auto;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+
+
+        .slider img {
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .slider div {
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+            position: relative;
+            background-size: cover;
+        }
+
+        .sliderNav {
+            display: flex;
+            column-gap: 8px;
+            position: absolute;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .sliderNav a {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+        }
+
+        .sliderNav a:hover {
+            opacity: 1;
+            background-color: #da271f4c;
+        }
+
+        .cardOverlay button {
+            position: absolute;
+            top: 559px;
+            left: 519px;
+            width: 207px;
+            height: 80px;
+            background-color: #da271f4c;
+            border: 2px solid white;
+            border-radius: 0.5rem;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cardOverlay button:hover {
+            background-color: #da271f;
+        }
+
+        button div {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+
+        .cardOverlay {
+            width: 1245px;
+            height: 759px;
+            background-color: #00271266;
+        }
+
+        .cardOverlay h3 {
+            position: absolute;
+            width: 1166px;
+            top: 197px;
+            left: 69px;
+            color: #ffffff;
+            font-family: "Lato";
+            text-align: center;
+            font-size: 70px;
+            font-weight: lighter;
+            letter-spacing: 0.19em;
+        }
+
+        .cardOverlay p {
+            position: absolute;
+            width: 1049px;
+            top: 299px;
+            left: 109px;
+            color: #ffffff;
+            font-family: "Lato";
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: 0.01em;
+        }
+
+        #wave {
+            top: 1480px;
+            height: 800px;
+            background-size: cover;
+        }
+
+        .aboutUs {
+            width: 1230px;
+            height: 266px;
+            margin: 0 auto;
+            margin-top: 200px;
+            padding: 0;
+        }
+
+        .aboutUs h2 {
+            padding: 0;
+            line-height: 30px;
+            height: 34px;
+            width: fit-content;
+            font-size: 48px;
+            letter-spacing: 0.05em;
+        }
+
+        .aboutUs .textbox {
+            background-color: #ffffff;
+            width: 100%;
+            height: 182px;
+            margin: 50px auto;
+            padding: 40px 10px;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            border-radius: 10px;
+            box-shadow: 0.5px 0.5px 5px gray;
+        }
+
+        .business {
+            height: 34px;
+            line-height: 25px;
+            font-size: 48px;
+            width: fit-content;
+            letter-spacing: 0.05em;
+            margin-top: 200px;
+        }
+
+        #wave2 {
+            top: 2570px;
+            height: 800px;
+            background-size: cover;
+        }
+
+        .businesscards {
+            width: 1244px;
+            height: 1213px;
+            margin: 100px auto;
+            row-gap: 50px;
+            display: flex;
+            flex-direction: column;
+            padding: 0 0;
+        }
+
+        .businesscards section {
+            height: 371px;
+            margin: 0 auto;
+            width: 1244px;
+            display: flex;
+            flex-direction: row;
+            column-gap: 64px;
+        }
+
+        .card {
+            position: relative;
+            height: 371px;
+            width: 590px;
+            padding: auto;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.1);
+        }
+
+        .businessCardOverlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .businessCardOverlay:hover {
+            opacity: 1;
+        }
+
+        .cardHeading {
+            width: 521px;
+            height: 46px;
+            border-image: linear-gradient(to right, #DE6741, #1EB641) 30;
+            border-width: 2px;
+            border-style: solid;
+            border-top: none;
+            margin: 0 auto;
+            margin-top: 41px;
+        }
+
+        #large .cardHeading {
+            width: 1102px;
+        }
+
+        .cardHeading h3 {
+            font-size: 20px;
+            letter-spacing: 0.32em;
+        }
+
+        .businessCardOverlay ul {
+            margin: 0 auto;
+            margin-top: 32px;
+            width: 521px;
+        }
+
+        #large .businessCardOverlay ul {
+            width: 1013px;
+        }
+
+        .businessCardOverlay ul li {
+            list-style: outside;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            line-height: 32px;
+            margin-left: 1em;
+        }
+
+
+        
+
+        #card1 {
+            background-color: #C6DDFF80;
+        }
+
+        #card2 {
+            background-color: #E4FFC280;
+        }
+
+        #card3 {
+            background-color: #E7E3FF80;
+        }
+
+        #card4 {
+            background-color: #ffffff80;
+        }
+
+        #large {
+            position: relative;
+            background-color: #F5DFFF80;
+            padding: auto;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.1);
+        }
+
+        .cardtext {
+            width: 273px;
+            font-size: 24px;
+            margin: auto;
+            text-align: center;
+            letter-spacing: 0.32em;
+            line-height: 60px;
+        }
+
+        .whyChoose {
+            width: 100%;
+            height: 894px;
+            background-size: cover;
+            margin-top: 200px;
+            position: relative;
+        }
+
+        .whyChooseOverlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #00180BF2;
+            top: 0;
+            left: 0;
+        }
+
+        .whyChoose .bgImg {
+            height: 100%;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .whyChooseOverlay h2 {
+            color: #f7f7f7;
+            width: fit-content;
+            height: 34px;
+            line-height: 25px;
+            margin-top: 64px;
+            letter-spacing: 0.05rem;
+            font-size: 48px;
+        }
+
+        .whyChooseOverlay strong {
+            color: #f7f7f7;
+            font-size: 16px;
+        }
+
+        .whyChooseOverlay p {
+            color: #f7f7f7;
+            width: 1155px;
+            margin: 0 auto;
+            margin-top: 105px;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            line-height: 40px;
+        }
+
+        .contactUs {
+            width: 978px;
+            height: 869px;
+            margin: 0 auto;
+            margin-top: 200px;
+        }
+
+        .contactUs h2 {
+            font-size: 48px;
+            width: fit-content;
+            letter-spacing: 0.05em;
+            height: 34px;
+            line-height: 25px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contactUs p {
+            width: 100%;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            margin-top: 50px;
+            line-height: 40px;
+        }
+
+        form {
+            height: 683px;
+            width: 803px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0.5px 0.5px 5px gray;
+            background-image: url('./Resources/waveimg.png');
+            background-size: auto;
+            align-items: center;
+            position: relative;
+        }
+
+        .formOverlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            padding-top: 62px;
+        }
+
+        form input {
+            margin: 0 auto;
+            width: 649px;
+            height: 56px;
+            border: 2px solid gray;
+            border-radius: 4px;
+            text-indent: 15px;
+            font-size: 16px;
+        }
+
+        form textarea {
+            width: 649px;
+            border: 2px solid gray;
+            border-radius: 4px;
+            margin: 0 auto;
+            text-indent: 15px;
+            font-size: 16px;
+            padding: 15px 0;
+        }
+
+        form label {
+            position: absolute;
+            width: fit-content;
+            background-color: #ffffff;
+            font-family: sans-serif;
+            font-size: 16px;
+            left: 93px;
+            letter-spacing: 0.4px;
+        }
+
+        form button {
+            margin: 0 auto;
+            width: 649px;
+            height: 80px;
+            background-color: #da271fb2;
+            border: none;
+            border-radius: 10px;
+            margin-top: 33px;
+            font-family: 'Poppins';
+            font-size: 16px;
+            color: #f7f7f7;
+            font-weight: bold;
+            letter-spacing: 0.01em;
+        }
+
+        form button:hover {
+            background-color: #DA271F;
+        }
+
+        [for='name'] {
+            top: 54px;
+        }
+
+        [for='email'] {
+            top: 135px;
+        }
+
+        [for='subject'] {
+            top: 216px;
+        }
+
+        [for='message'] {
+            top: 297px;
+        }
+
+        footer {
+            width: 100%;
+            height: 450px;
+            margin: 0 auto;
+            padding: 100px 101px 68px;
+            margin-top: 241px;
+            background: radial-gradient(#00180BF2, black);
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer nav {
+            display: flex;
+            flex-direction: row;
+            height: fit-content;
+        }
+
+        footer .sign {
+            padding: 0;
+            height: 38px;
+        }
+
+
+        footer .logoName {
+            color: #f7f7f7;
+            font-size: 32px;
+            height: 38px;
+        }
+
+        footer figure.logo {
+            height: 31px;
+            width: 34.38px;
+        }
+
+        footer #footnav1 ul {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            margin-right: 0;
+            column-gap: 151px;
+            align-items: center;
+        }
+
+        footer nav ul li {
+            color: #f7f7f7;
+            font-size: 20px;
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
+        }
+
+        #footnav1 li a {
+            color: #f7f7f7;
+            line-height: 0;
+        }
+
+        #footnav2 {
+            padding-top: 106px;
+        }
+
+
+        #footnav2 ul {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            margin-left: 0;
+            column-gap: 133px;
+        }
+
+        #footnav2 ul li a {
+            color: #f7f7f7;
+        }
+
+        #footnav2 #emailaddress {
+            float: right;
+            font-size: 20px;
+            color: #f7f7f7;
+            margin: 0 auto;
+            margin-right: 0;
+        }
+
+        #emailaddress li {
+            width: fit-content;
+        }
+
+        #footnav3 {
+            height: 120px;
+            align-items: flex-end;
+        }
+
+        #footnav3 ul {
+            display: flex;
+            flex-direction: row;
+            column-gap: 234px;
+            margin: 0;
+            margin-right: 0;
+            width: 100%;
+        }
+
+        #footnav3 ul li {
+            text-align: left;
+            width: fit-content;
+            font-size: 14px;
+            height: 15px;
+        }
+
+        @media (max-width: 1275px) {
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: 'Lato';
+                box-sizing: border-box;
+                list-style: none;
+                text-decoration: none;
+                color: black;
+            }
+
+
+            body {
+                width: 834px;
+                margin: 0 auto;
+                background-color: #f7f7f7;
+            }
+
+            #fullOverlay {
+                position: fixed;
+                height: 100%;
+                width: 834px;
+                background-color: #0000007f;
+                top: 94px;
+                z-index: 5;
+                display: none;
+            }
+
+            #fullOverlay #sandwichNav {
+                background-color: #f7f7f7;
+                margin: 50px auto;
+                height: 75px;
+                width: 667px;
+                border-radius: 10px;
+            }
+
+            #fullOverlay #sandwichNav ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+
+            #fullOverlay #sandwichNav ul li {
+                width: 33.3%;
+            }
+
+            #fullOverlay #sandwichNav ul li a {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #fullOverlay #sandwichNav ul li a:hover {
+                background-color: lightgray;
+            }
+
+            #fullOverlay #sandwichNav ul li a p {
+                font-size: 20px;
+                text-align: center;
+                border: 0.5px solid black;
+                border-top: none;
+                border-bottom: none;
+            }
+
+            nav.header {
+                background-color: #f7f7f70F;
+                backdrop-filter: blur(5px);
+                height: 94px;
+                width: 834px;
+                margin: 0;
+                position: fixed;
+                top: 0;
+                z-index: 3;
+                overflow-y: visible;
+            }
+
+            figure {
+                background-size: cover;
+            }
+
+            figure.logo {
+                height: 26.62px;
+                width: 24px;
+            }
+
+            .sign {
+                display: inline-flex;
+                flex-direction: row;
+                gap: 8px;
+                padding: 23px 0px 0px 62px;
+            }
+
+            .logoName {
+                margin: auto 0;
+                font-family: 'Lato';
+                color: #007334;
+            }
+
+            h5.logoName {
+                font-size: 24px;
+            }
+
+            #navlinks {
+                display: none;
+            }
+
+            #sandwich {
+                height: 48px;
+                width: 48px;
+                display: block;
+                float: right;
+                margin-right: 62px;
+                margin-top: 23px;
+                background-size: cover;
+                border: none;
+                background-color: transparent;
+            }
+
+            #sandwich:active #fullOverlay {
+                display: block;
+            }
+
+            .bgImg {
+                position: absolute;
+                width: 834px;
+                z-index: -1;
+                opacity: 0.2;
+            }
+
+            #map {
+                top: 94px;
+                height: 333.6px;
+            }
+
+            h2 {
+                line-height: 120px;
+                text-align: center;
+                width: fit-content;
+                height: fit-content;
+                margin: 0 auto;
+                margin-top: 100px;
+                font-size: 24px;
+            }
+
+            .welcomeMessage {
+                margin: 0 auto;
+                background: linear-gradient(to right, #de6741, #1eb641);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                margin-top: 64px;
+            }
+
+            .welcomeMessage h1 {
+                font-size: 100px;
+                width: 699px;
+                text-align: center;
+                margin: 0 auto;
+                font-weight: lighter;
+            }
+
+            .slogan {
+                width: 700px;
+                height: 84px;
+                text-align: center;
+                font-size: 16px;
+                line-height: 32px;
+                margin: 0 auto;
+                margin-top: 40px;
+                color: #505050;
+            }
+
+            .carouselContainer {
+                padding: 2rem 0;
+                margin: 0 auto;
+            }
+
+            .sliderWrapper {
+                position: relative;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+
+            .slider {
+                display: flex;
+                height: 451px;
+                width: 700px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0% 0.25);
+                border-radius: 0.5rem;
+                margin: 0 auto;
+            }
+
+            .slider::-webkit-scrollbar {
+                display: none;
+            }
+
+
+
+            .slider img {
+                flex: 1 0 100%;
+                scroll-snap-align: start;
+                object-fit: contain;
+                position: relative;
+            }
+
+            .slider div {
+                height: 451px;
+                width: 700px;
+                flex: 1 0 100%;
+                scroll-snap-align: start;
+                object-fit: contain;
+                position: relative;
+                background-size: cover;
+            }
+
+            .sliderNav {
+                display: flex;
+                column-gap: 4.7px;
+                position: absolute;
+                bottom: 10.77px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+
+            .sliderNav a {
+                width: 8.23px;
+                height: 8.23px;
+                border-radius: 50%;
+                background-color: #ffffff;
+                opacity: 0.75;
+                transition: opacity ease 250ms;
+            }
+
+            .sliderNav a:hover {
+                opacity: 1;
+                background-color: #da271f4c;
+            }
+
+            .cardOverlay button {
+                position: absolute;
+                top: 344px;
+                left: 284px;
+                width: 132px;
+                height: 48px;
+                background-color: #da271f4c;
+                border: 0.5px solid white;
+                border-radius: 10px;
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 16px 20px;
+            }
+
+            .cardOverlay button:hover {
+                background-color: #da271f;
+            }
+
+            .cardOverlay a button div {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+            }
+
+            .cardOverlay {
+                width: 700px;
+                height: 451px;
+                background-color: #00271266;
+            }
+
+            .cardOverlay h3 {
+                position: absolute;
+                width: 636px;
+                top: 55px;
+                left: 32px;
+                color: #ffffff;
+                font-family: "Lato";
+                text-align: center;
+                font-size: 32px;
+                font-weight: lighter;
+                letter-spacing: .35em;
+            }
+
+            .cardOverlay p {
+                position: absolute;
+                width: 599px;
+                top: 125px;
+                left: 50.5px;
+                color: #ffffff;
+                font-family: "Lato";
+                text-align: center;
+                font-size: 14px;
+                line-height: 32px;
+                letter-spacing: 0.01em;
+            }
+
+            #wave {
+                top: 462px;
+                height: 222px;
+                background-size: cover;
+                width: 390px;
+                display: none;
+            }
+
+            .aboutUs {
+                width: 700px;
+                height: 269px;
+                margin: 0 auto;
+                margin-top: 100px;
+                padding: 0;
+            }
+
+            .aboutUs h2 {
+                padding: 0;
+                line-height: 30px;
+                height: 17px;
+                width: fit-content;
+                font-size: 24px;
+                letter-spacing: 0.05em;
+                margin: 0 auto;
+            }
+
+            .aboutUs .textbox {
+                background-color: transparent;
+                width: 100%;
+                height: 204px;
+                margin: 48px auto;
+                padding: 0;
+                font-size: 16px;
+                line-height: 32px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .business {
+                height: 17px;
+                line-height: 25px;
+                font-size: 24px;
+                width: fit-content;
+                letter-spacing: 0.05em;
+                margin: 0 auto;
+                margin-top: 100px;
+            }
+
+            #wave2 {
+                display: none;
+            }
+
+            .businesscards {
+                width: 702px;
+                height: 1244px;
+                margin: 50px auto;
+                row-gap: 22px;
+                display: flex;
+                flex-direction: column;
+                padding: 0 0;
+            }
+
+            .businesscards section {
+                height: 400px;
+                margin: 0 auto;
+                width: 702px;
+                display: flex;
+                flex-direction: row;
+                column-gap: 22px;
+            }
+
+            .card {
+                position: relative;
+                width: 100%;
+                padding: auto;
+                display: flex;
+                justify-content: center;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.1);
+            }
+
+            /* .businesscards section #card1 {
+                height: 311px;
+            }
+
+            .businesscards section #card2 {
+                height: 376px;
+            }
+
+            .businesscards section #card3 {
+                height: 244px;
+            }
+
+            .businesscards section #card4 {
+                height: 216px;
+            } */
+
+            #large {
+                position: relative;
+                background-color: #F5DFFF80;
+                height: 400px;
+                padding: auto;
+                display: flex;
+                justify-content: center;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.1);
+            }
+
+            .businessCardOverlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                top: 0;
+                left: 0;
+                opacity: 1;
+            }
+
+            .cardHeading {
+                width: 284px;
+                height: 37px;
+                border-image: linear-gradient(to right, #DE6741, #1EB641) 30;
+                border-width: 0.5px;
+                border-style: solid;
+                border-top: none;
+                margin: 0 auto;
+                margin-top: 32px;
+            }
+
+            #large .cardHeading {
+                width: 636px;
+            }
+
+            .cardHeading h3 {
+                font-size: 16px;
+                letter-spacing: 0.14em;
+            }
+
+            .businessCardOverlay ul {
+                margin: 0 auto;
+                margin-top: 32px;
+                width: 305px;
+            }
+
+            #large .businessCardOverlay ul {
+                width: 642px;
+                margin-top: 32px;
+            }
+
+            .businessCardOverlay ul li {
+                list-style: outside;
+                font-size: 14px;
+                letter-spacing: 0.01em;
+                line-height: 28px;
+                margin-left: 2em;
+            }
+
+            #large .businessCardOverlay ul li {
+                list-style: outside;
+                font-size: 14px;
+                letter-spacing: 0.01em;
+                line-height: 32px;
+            }
+
+            .whyChoose {
+                width: 100%;
+                height: 717px;
+                background-size: cover;
+                margin-top: 100px;
+                position: relative;
+            }
+
+            .whyChooseOverlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #00180BF2;
+                top: 0;
+                left: 0;
+            }
+
+            .whyChoose .bgImg {
+                height: 100%;
+                z-index: 1;
+                opacity: 0.6;
+            }
+
+            .whyChooseOverlay h2 {
+                color: #f7f7f7;
+                width: fit-content;
+                height: 17px;
+                line-height: 25px;
+                margin-top: 110.5px;
+                letter-spacing: 0.05rem;
+                font-size: 24px;
+            }
+
+            .whyChooseOverlay strong {
+                color: #f7f7f7;
+                font-size: 16px;
+            }
+
+            .whyChooseOverlay p {
+                color: #f7f7f7;
+                width: 697px;
+                margin: 0 auto;
+                margin-top: 50px;
+                font-size: 16px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                line-height: 24px;
+            }
+
+            .contactUs {
+                width: 700px;
+                height: 614px;
+                margin: 0 auto;
+                margin-top: 100px;
+            }
+
+            .contactUs h2 {
+                font-size: 24px;
+                width: fit-content;
+                letter-spacing: 0.05em;
+                height: 17px;
+                line-height: 25px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .contactUs p {
+                width: 100%;
+                font-size: 16px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                margin-top: 40px;
+                line-height: 24px;
+            }
+
+            form {
+                height: 457px;
+                width: 534px;
+                margin: 0 auto;
+                margin-top: 40px;
+                border-radius: 6.65px;
+                box-shadow: 0.5px 0.5px 5px gray;
+                background-image: none;
+                background-size: auto;
+                align-items: center;
+                position: relative;
+            }
+
+            .formOverlay {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.8);
+                display: flex;
+                flex-direction: column;
+                row-gap: 16.62px;
+                padding-top: 41.21px;
+            }
+
+            form input {
+                margin: 0 auto;
+                width: 431.4px;
+                height: 37.22px;
+                border: 0.5px solid gray;
+                border-radius: 2.66px;
+            }
+
+            form textarea {
+                width: 431.4px;
+                border: 0.5px solid gray;
+                border-radius: 2.66px;
+                margin: 0 auto;
+                height: 129.62px;
+            }
+
+            form label {
+                position: absolute;
+                width: fit-content;
+                background-color: #ffffff;
+                font-family: sans-serif;
+                font-size: 12px;
+                left: 59.16px;
+                letter-spacing: 0.27px;
+            }
+
+            form button {
+                margin: 0 auto;
+                width: 431.4px;
+                height: 53.6px;
+                background-color: #da271fb2;
+                border: none;
+                border-radius: 6.65px;
+                font-family: 'Poppins';
+                font-size: 14px;
+                color: #f7f7f7;
+                font-weight: bold;
+                letter-spacing: 0.01em;
+            }
+
+            form button:hover {
+                background-color: #DA271F;
+            }
+
+            [for='name'] {
+                top: 35.7px;
+            }
+
+            [for='email'] {
+                top: 89px;
+            }
+
+            [for='subject'] {
+                top: 142px;
+            }
+
+            [for='message'] {
+                top: 195px;
+            }
+
+            footer {
+                width: 100%;
+                height: 267px;
+                margin: 0 auto;
+                padding: 51px 63.5px;
+                margin-top: 149px;
+                background: radial-gradient(#00180BF2, black);
+                display: flex;
+                flex-direction: column;
+            }
+
+            footer nav {
+                display: flex;
+                flex-direction: row;
+                height: fit-content;
+            }
+
+            footer .sign {
+                padding: 0;
+                height: 26px;
+            }
+
+
+            footer .logoName {
+                color: #f7f7f7;
+                font-size: 22px;
+                height: 26px;
+            }
+
+            footer figure.logo {
+                height: 16.23px;
+                width: 18px;
+            }
+
+
+            footer #footnav1 ul {
+                display: flex;
+                flex-direction: row;
+                column-gap: 16px;
+                margin: 0 auto;
+                margin-right: 0;
+                align-items: center;
+            }
+
+            footer nav ul li {
+                color: #f7f7f7;
+                font-size: 14px;
+                font-weight: lighter;
+                width: fit-content;
+                height: fit-content;
+                margin: 0;
+                letter-spacing: 0;
+            }
+
+            #footnav1 li a {
+                color: #f7f7f7;
+                line-height: 0;
+            }
+
+            #footnav2 {
+                padding-top: 50px;
+            }
+
+            #footnav2 ul {
+                display: flex;
+                flex-direction: row;
+                column-gap: 37.67px;
+                margin: 0 auto;
+                margin-left: 0;
+            }
+
+            #footnav2 ul li a {
+                color: #f7f7f7;
+            }
+
+            #footnav2 #emailaddress {
+                float: right;
+                font-size: 14px;
+                color: #f7f7f7;
+                margin: 0 auto;
+                margin-right: 0;
+            }
+
+            #emailaddress li {
+                width: fit-content;
+            }
+
+            #footnav3 {
+                height: 75px;
+            }
+
+            #footnav3 ul {
+                margin: 0;
+                margin-right: 0;
+                display: flex;
+                flex-direction: row;
+                column-gap: 75px;
+
+            }
+
+            #footnav3 ul li {
+                text-align: center;
+                width: fit-content;
+                font-size: 12px;
+                height: 15px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: 'Lato';
+                box-sizing: border-box;
+                list-style: none;
+                text-decoration: none;
+                color: black;
+            }
+
+
+            body {
+                width: 390px;
+                margin: 0 auto;
+                background-color: #f7f7f7;
+            }
+
+            #fullOverlay {
+                position: fixed;
+                height: 100%;
+                width: 390px;
+                background-color: #0000007f;
+                top: 46px;
+                z-index: 5;
+                display: none;
+            }
+
+            #fullOverlay #sandwichNav {
+                background-color: #f7f7f7;
+                margin: 20px auto;
+                height: 75px;
+                width: 363px;
+                border-radius: 10px;
+            }
+
+            #fullOverlay #sandwichNav ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+
+            #fullOverlay #sandwichNav ul li {
+                width: 33.3%;
+            }
+
+            #fullOverlay #sandwichNav ul li a {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #fullOverlay #sandwichNav ul li a:hover {
+                background-color: lightgray;
+            }
+
+            #fullOverlay #sandwichNav ul li a p {
+                font-size: 20px;
+                text-align: center;
+                border: 0.5px solid black;
+                border-top: none;
+                border-bottom: none;
+            }
+
+            nav.header {
+                background-color: #f7f7f70F;
+                backdrop-filter: blur(5px);
+                height: 46px;
+                width: 390px;
+                margin: 0;
+                position: fixed;
+                top: 0;
+                z-index: 3;
+                overflow-y: visible;
+            }
+
+            figure {
+                background-size: cover;
+            }
+
+            figure.logo {
+                height: 24px;
+                width: 24px;
+            }
+
+            .sign {
+                display: inline-flex;
+                flex-direction: row;
+                gap: 8px;
+                padding: 11px 0px 0px 26px;
+            }
+
+            .logoName {
+                margin: auto 0;
+                font-family: 'Lato';
+                color: #007334;
+            }
+
+            h5.logoName {
+                font-size: 16px;
+            }
+
+            #navlinks {
+                display: none;
+            }
+
+            #sandwich {
+                height: 24px;
+                width: 24px;
+                display: block;
+                float: right;
+                margin-right: 26px;
+                margin-top: 11px;
+                background-size: cover;
+                border: none;
+                background-color: transparent;
+            }
+
+            #sandwich:active #fullOverlay {
+                display: block;
+            }
+
+            .bgImg {
+                position: absolute;
+                width: 390px;
+                z-index: -1;
+                opacity: 0.2;
+            }
+
+            #map {
+                top: 46px;
+                height: 156px;
+            }
+
+            .welcome {
+                display: none;
+            }
+
+            .welcomeMessage {
+                margin: 0 auto;
+                background: linear-gradient(to right, #de6741, #1eb641);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                margin-top: 64px;
+            }
+
+            .welcomeMessage h1 {
+                font-size: 32px;
+                width: 320px;
+                text-align: center;
+                margin: 0 auto;
+                font-weight: lighter;
+            }
+
+            .slogan {
+                width: 340px;
+                height: 60px;
+                text-align: center;
+                font-size: 14px;
+                line-height: 20px;
+                margin: 0 auto;
+                margin-top: 32px;
+                color: #505050;
+            }
+
+            .carouselContainer {
+                padding: 2rem 0;
+                margin: 0 auto;
+            }
+
+            .sliderWrapper {
+                position: relative;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+
+
+            .slider {
+                display: flex;
+                height: 207px;
+                width: 340px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0% 0.25);
+                border-radius: 0.5rem;
+                margin: 0 auto;
+            }
+
+            .slider::-webkit-scrollbar {
+                display: none;
+            }
+
+
+
+            .slider img {
+                flex: 1 0 100%;
+                scroll-snap-align: start;
+                object-fit: contain;
+                position: relative;
+            }
+
+            .slider div {
+                height: 207px;
+                width: 340px;
+                flex: 1 0 100%;
+                scroll-snap-align: start;
+                object-fit: contain;
+                position: relative;
+                background-size: contain;
+            }
+
+            .sliderNav {
+                display: flex;
+                column-gap: 2.18px;
+                position: absolute;
+                bottom: 6.66px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+
+            .sliderNav a {
+                width: 3.82px;
+                height: 3.82px;
+                border-radius: 50%;
+                background-color: #ffffff;
+                opacity: 0.75;
+                transition: opacity ease 250ms;
+            }
+
+            .sliderNav a:hover {
+                opacity: 1;
+                background-color: #da271f4c;
+            }
+
+            .cardOverlay button {
+                position: absolute;
+                top: 150px;
+                left: 135px;
+                width: 69px;
+                height: 25.42px;
+                background-color: #da271f4c;
+                border: 0.5px solid white;
+                border-radius: 3.1px;
+                color: #ffffff;
+                font-size: 6.21px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 6.21px 12.41px;
+            }
+
+            .cardOverlay button:hover {
+                background-color: #da271f;
+            }
+
+            .cardOverlay a button div {
+                width: 7.45px;
+                height: 7.45px;
+                display: inline-block;
+            }
+
+            .cardOverlay {
+                width: 340px;
+                height: 207px;
+                background-color: #00271266;
+            }
+
+            .cardOverlay h3 {
+                position: absolute;
+                width: 288px;
+                top: 31px;
+                left: 28.4px;
+                color: #ffffff;
+                font-family: "Lato";
+                text-align: center;
+                font-size: 20px;
+                font-weight: lighter;
+                letter-spacing: .08em;
+            }
+
+            .cardOverlay p {
+                position: absolute;
+                width: 297px;
+                top: 61.44px;
+                left: 21.44px;
+                color: #ffffff;
+                font-family: "Lato";
+                text-align: center;
+                font-size: 8.27px;
+                line-height: 15.5px;
+                letter-spacing: 0.01em;
+            }
+
+            #wave {
+                top: 462px;
+                height: 222px;
+                background-size: cover;
+                width: 390px;
+            }
+
+            .aboutUs {
+                width: 340px;
+                height: 279px;
+                margin: 0 auto;
+                margin-top: 64px;
+                padding: 0;
+            }
+
+            .aboutUs h2 {
+                padding: 0;
+                line-height: 30px;
+                height: 17px;
+                width: fit-content;
+                font-size: 24px;
+                letter-spacing: 0.05em;
+                margin: 0 auto;
+            }
+
+            .aboutUs .textbox {
+                background-color: transparent;
+                width: 100%;
+                height: 230px;
+                margin: 32px auto;
+                padding: 0;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .business {
+                height: 17px;
+                line-height: 25px;
+                font-size: 24px;
+                width: fit-content;
+                letter-spacing: 0.05em;
+                margin: 0 auto;
+                margin-top: 64px;
+            }
+
+            #wave2 {
+                display: none;
+            }
+
+            .businesscards {
+                width: 340px;
+                height: 1639px;
+                margin: 32px auto;
+                row-gap: 16px;
+                display: flex;
+                flex-direction: column;
+                padding: 0 0;
+            }
+
+            .businesscards section {
+                height: fit-content;
+                margin: 0 auto;
+                width: 340px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 16px;
+            }
+
+            .card {
+                position: relative;
+                width: 100%;
+                padding: auto;
+                display: flex;
+                justify-content: center;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.1);
+            }
+
+            .businesscards section #card1 {
+                height: 311px;
+            }
+
+            .businesscards section #card2 {
+                height: 376px;
+            }
+
+            .businesscards section #card3 {
+                height: 244px;
+            }
+
+            .businesscards section #card4 {
+                height: 216px;
+            }
+
+            #large {
+                position: relative;
+                background-color: #F5DFFF80;
+                height: 428px;
+                padding: auto;
+                display: flex;
+                justify-content: center;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.1);
+            }
+
+            .businessCardOverlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                top: 0;
+                left: 0;
+                opacity: 1;
+            }
+
+            .cardHeading {
+                width: 302px;
+                height: 28px;
+                border-image: linear-gradient(to right, #DE6741, #1EB641) 30;
+                border-width: 0.5px;
+                border-style: solid;
+                border-top: none;
+                margin: 0 auto;
+                margin-top: 32px;
+            }
+
+            #large .cardHeading {
+                width: 302px;
+            }
+
+            .cardHeading h3 {
+                font-size: 16px;
+                letter-spacing: 0.18em;
+            }
+
+            .businessCardOverlay ul {
+                margin: 0 auto;
+                margin-top: 16px;
+                width: 304px;
+            }
+
+            #large .businessCardOverlay ul {
+                width: 304px;
+                margin-top: 16px;
+            }
+
+            .businessCardOverlay ul li {
+                list-style: outside;
+                font-size: 14px;
+                letter-spacing: 0.01em;
+                line-height: 32px;
+                margin-left: 1.5em;
+            }
+
+            #large .businessCardOverlay ul li {
+                list-style: outside;
+                font-size: 14px;
+                letter-spacing: 0.01em;
+                line-height: 28px;
+            }
+
+            .whyChoose {
+                width: 100%;
+                height: 631px;
+                background-size: cover;
+                margin-top: 64px;
+                position: relative;
+            }
+
+            .whyChooseOverlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #00180BF2;
+                top: 0;
+                left: 0;
+            }
+
+            .whyChoose .bgImg {
+                height: 100%;
+                z-index: 1;
+                opacity: 0.6;
+            }
+
+            .whyChooseOverlay h2 {
+                color: #f7f7f7;
+                width: fit-content;
+                height: 17px;
+                line-height: 25px;
+                margin-top: 32px;
+                letter-spacing: 0.05rem;
+                font-size: 24px;
+            }
+
+            .whyChooseOverlay strong {
+                color: #f7f7f7;
+                font-size: 14px;
+            }
+
+            .whyChooseOverlay p {
+                color: #f7f7f7;
+                width: 336px;
+                margin: 0 auto;
+                margin-top: 32px;
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                line-height: 19.3px;
+            }
+
+            .contactUs {
+                width: 338px;
+                height: 644px;
+                margin: 0 auto;
+                margin-top: 64px;
+            }
+
+            .contactUs h2 {
+                font-size: 24px;
+                width: fit-content;
+                letter-spacing: 0.05em;
+                height: 17px;
+                line-height: 25px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .contactUs p {
+                width: 100%;
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                margin-top: 32px;
+                line-height: 24px;
+            }
+
+            form {
+                height: 457px;
+                width: 340px;
+                margin: 0 auto;
+                margin-top: 32px;
+                border-radius: 6.65px;
+                box-shadow: 0.5px 0.5px 5px gray;
+                background-image: none;
+                background-size: auto;
+                align-items: center;
+                position: relative;
+            }
+
+            .formOverlay {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.8);
+                display: flex;
+                flex-direction: column;
+                row-gap: 16px;
+                padding-top: 41px;
+            }
+
+            form input {
+                margin: 0 auto;
+                width: 291px;
+                height: 37px;
+                border: 0.5px solid gray;
+                border-radius: 2.66px;
+            }
+
+            form textarea {
+                width: 291px;
+                height: 129.62px;
+                border: 0.5px solid gray;
+                border-radius: 2.66px;
+                margin: 0 auto;
+            }
+
+            form label {
+                position: absolute;
+                width: fit-content;
+                background-color: #ffffff;
+                font-family: sans-serif;
+                font-size: 12px;
+                left: 35.63px;
+                letter-spacing: 0.27px;
+            }
+
+            form button {
+                margin: 0 auto;
+                width: 291px;
+                height: 53.6px;
+                background-color: #da271fb2;
+                border: none;
+                border-radius: 6.65px;
+                font-family: 'Poppins';
+                font-size: 14px;
+                color: #f7f7f7;
+                font-weight: bold;
+                letter-spacing: 0.01em;
+            }
+
+            form button:hover {
+                background-color: #DA271F;
+            }
+
+            [for='name'] {
+                top: 35.7px;
+            }
+
+            [for='email'] {
+                top: 89px;
+            }
+
+            [for='subject'] {
+                top: 142px;
+            }
+
+            [for='message'] {
+                top: 195px;
+            }
+
+            footer {
+                width: 100%;
+                height: 464px;
+                margin: 0 auto;
+                padding: 32px 28px;
+                margin-top: 64px;
+                background: radial-gradient(#00180BF2, black);
+                display: flex;
+                flex-direction: column;
+                row-gap: 64px;
+            }
+
+            footer nav {
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+                row-gap: 32px;
+            }
+
+            footer .sign {
+                margin: 0 auto;
+                padding: 0;
+                height: 26px;
+            }
+
+
+            footer .logoName {
+                color: #f7f7f7;
+                font-size: 22px;
+                height: 26px;
+            }
+
+            footer figure.logo {
+                height: 16.23px;
+                width: 18px;
+                margin-top: 4px;
+            }
+
+
+            footer #footnav1 ul {
+                display: flex;
+                flex-direction: row;
+                column-gap: 25.67px;
+                margin: 0 auto;
+            }
+
+            footer nav ul li {
+                color: #f7f7f7;
+                font-size: 12.5px;
+                font-weight: lighter;
+                width: fit-content;
+                height: fit-content;
+                margin: 0;
+                letter-spacing: 0;
+            }
+
+            #footnav1 li a {
+                color: #f7f7f7;
+                line-height: 0;
+            }
+
+            #footnav2 {
+                padding: 0;
+            }
+
+            #footnav2 ul {
+                display: flex;
+                flex-direction: row;
+                float: none;
+                column-gap: 37.67px;
+                margin: 0 auto;
+            }
+
+            #footnav2 ul li a {
+                color: #f7f7f7;
+            }
+
+            #footnav2 #emailaddress {
+                float: none;
+                font-size: 20px;
+                color: #f7f7f7;
+                margin: 0 auto;
+            }
+
+            #emailaddress li {
+                width: fit-content;
+            }
+
+            #footnav3 ul {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                row-gap: 32px;
+                float: none;
+            }
+
+            #footnav3 ul li {
+                text-align: center;
+                width: fit-content;
+                margin: 0 auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <main id="root">
+        <div id="fullOverlay">
+            <div id="sandwichNav">
+                <ul>
+                    <li><a href="./index.html">
+                            <p>Home</p>
+                        </a></li>
+                    <li><a href="./AboutUs/index.html">
+                            <p>About Us</p>
+                        </a></li>
+                    <li><a href="./index.html#contactus">
+                            <p>Contact Us</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class='header'>
+            <label class="sign">
+                <figure class="logo" style="background-image: url('./Resources/logo.png');"></figure>
+                <h5 class="logoName">LAIMUNATI</h5>
+            </label>
+            <ul id='navlinks'>
+                <a href="./index.html" class='navlink'>
+                    <li class='navlinkitem'>Home</li>
+                </a>
+                <a href="./AboutUs/index.html" class='navlink'>
+                    <li class='navlinkitem'>About Us</li>
+                </a>
+                <li class="ourbiz navlinkitem">
+                    <a class='navlink'>Our Businesses<img src="./Resources/arrow-down.png" alt=""></a>
+                    <div id="dropdown">
+                        <ul>
+                            <a href="./Build/index.html" class='dropdownItem'>
+                                <li class='item'>Build</li>
+                            </a>
+                            <a href="./Energy/index.html" class='dropdownItem'>
+                                <li class='item'>Energy</li>
+                            </a>
+                            <a href="./Investments/index.html" class='dropdownItem'>
+                                <li class='item'>Investments</li>
+                            </a>
+                            <a href="./Technology/index.html" class='dropdownItem'>
+                                <li class='item'>Technology</li>
+                            </a>
+                        </ul>
+                    </div>
+                </li>
+                <a class='navlink' href="">
+                    <li class='navlinkitem'>Contact Us</li>
+                </a>
+            </ul>
+            <button id="sandwich">
+                <img src="./Resources/menu_black_24dp 1.png" alt="">
+            </button>
+        </nav>
+        <figure class="bgImg" id="map" style="background-image: url('./Resources/mapImg.png');"></figure>
+        <div class="welcomeMessage">
+            <h2 class="welcome">WELCOME TO</h2>
+            <h1>LAIMUNATI GROUP</h1>
+        </div>
+        <p class="slogan">Shaping the Future of Africa through Breakthroughs in Building, Energy, Investments, and
+            Technology. Discover Laimunati Group Today</p>
+        <section class="carouselContainer">
+            <div class="sliderWrapper">
+                <div class="slider" id='scroll'>
+                    <div id="slide1" style="background-image: url('./Resources/buildImg.png');">
+                        <div class="cardOverlay">
+                            <h3>LAIMUNATI BUILD</h3>
+                            <a href='./Build/index.html'><button>Explore<div
+                                        style="background-image: url('./Resources/Line arrow-right.png');"></div>
+                                </button></a>
+                            <p>We are your trusted partner in the realms of Building Construction, Real Estate
+                                Expertise, Property Valuation, Town Planning Services, Information Planning, Building
+                                Management, Recreational Facilities, Car Parks, Design Management, and Feasibility of
+                                Physical Development. Let us elevate your projects with our professional excellence and
+                                innovative solutions...</p>
+                        </div>
+                    </div>
+                    <div id="slide2" style="background-image: url('./Resources/energyImg.png');">
+                        <div class="cardOverlay">
+                            <h3>LAIMUNATI ENERGY</h3>
+                            <a href='./Energy/index.html'><button>Explore<div
+                                        style="background-image: url('./Resources/Line arrow-right.png');"></div>
+                                </button></a>
+                            <p>Nurturing Opportunities: Laimunati Investment is Empowering Growth through Astute
+                                Ventures in Human Capital Development, Import, Export, Trading, Marketing, Sales,
+                                Distribution of General Goods...</p>
+                        </div>
+                    </div>
+                    <div id="slide3" style="background-image: url('./Resources/invImg.png');">
+                        <div class="cardOverlay">
+                            <h3>LAIMUNATI INVESTMENTS</h3>
+                            <a href='./Investments/index.html'><button>Explore<div
+                                        style="background-image: url('./Resources/Line arrow-right.png');"></div>
+                                </button></a>
+                            <p>Energizing Tomorrow and Empowering Progress in Oil and Gas, Hydroelectric and Solar Power
+                                Supply, Environmental Management System Studies, Waste Management, Environmental Impact
+                                Assessment, Oil Spill Cleanup, and Ecological Waste Management Solutions</p>
+                        </div>
+                    </div>
+                    <div id="slide4" style="background-image: url('./Resources/techImg.png');">
+                        <div class="cardOverlay">
+                            <h3>LAIMUNATI TECHNOLOGY</h3>
+                            <a href='./Technology/index.html'><button>Explore<div
+                                        style="background-image: url('./Resources/Line arrow-right.png');"></div>
+                                </button></a>
+                            <p>Fostering Innovation: Laimunati Technology is Driving Progress with Cutting-edge Ventures
+                                in Information And Communication Technology (ICT), including Software/Website
+                                Development, Product Design, System Assembling, Internet Services Provision, and
+                                Communication Solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliderNav">
+                    <a href="#slide1" class='slideBtn'></a>
+                    <a href="#slide2" class='slideBtn'></a>
+                    <a href="#slide3" class='slideBtn'></a>
+                    <a href="#slide4" class='slideBtn'></a>
+                </div>
+            </div>
+        </section>
+        <div class="bgImg" id="wave" style="background-image: url('./Resources/waveimg.png');"></div>
+        <section class="aboutUs">
+            <h2>ABOUT US</h2>
+            <div class="textbox">Laimunati Group is a dynamic conglomerate excelling in Building Construction, Real
+                Estate, Energy, Investment, and Technology sectors. Our diverse ventures encompass innovative solutions
+                in Information and Communication Technology (ICT), Oil and Gas, Renewable Energy, Environmental
+                Management, Import/Export, and more. With a commitment to excellence and sustainable growth, we inspire
+                progress and shape a brighter future for Africa. Join us on this exciting journey of empowerment and
+                visionary success.</div>
+        </section>
+        <h2 class="business">OUR BUSINESS MODEL</h2>
+        <div class="bgImg" id='wave2' style="background-image: url('./Resources/waveimg.png');"></div>
+        <section class="businesscards">
+            <section>
+                <div class="card" id="card1">
+                    <div class="businessCardOverlay" style="background-color: #C6DDFF;">
+                        <div class="cardHeading">
+                            <h3 class="overlayHeading">ORIGINATION</h3>
+                        </div>
+                        <ul>
+                            <li>Project origination through wide industry network.</li>
+                            <li>Strong relationships with major IPP’s and offtakers.</li>
+                            <li>Participation in public and private tenders.</li>
+                            <li>Co-development with other developers and local partners.</li>
+                        </ul>
+                    </div>
+                    <h3 class="cardtext">ORIGINATION</h3>
+                </div>
+                <div class="card" id="card2">
+                    <div class="businessCardOverlay" style="background-color: #E4FFC2;">
+                        <div class="cardHeading">
+                            <h3 class="overlayHeading">FEASIBILITY</h3>
+                        </div>
+                        <ul>
+                            <li>In-house initial technical feasibility studies PVSyst, topography, electrical
+                                infrastructure, geotechnical and environmental impact assessment.</li>
+                            <li>Selecting land areas and site visits.</li>
+                            <li>Negotiating preliminary documents and obtaining permits/licenses.</li>
+                            <li>Adherence to international standards in compliance ESG regulations and local laws.</li>
+                        </ul>
+                    </div>
+                    <h3 class="cardtext">FEASIBILITY</h3>
+                </div>
+            </section>
+            <section>
+                <div class="card" id="card3">
+                    <div class="businessCardOverlay" style="background-color: #E7E3FF;">
+                        <div class="cardHeading">
+                            <h3 class="overlayHeading">CONSTRUCTION</h3>
+                        </div>
+                        <ul>
+                            <li>Finance equity of projects.</li>
+                            <li>In-house EPC and Project Management capabilities.</li>
+                            <li>In budget and on schedule construction and commissioning of solar plants.</li>
+                        </ul>
+                    </div>
+                    <h3 class="cardtext">CONSTRUCTION</h3>
+                </div>
+                <div class="card" id="card4">
+                    <div class="businessCardOverlay" style="background-color: #ffffff;">
+                        <div class="cardHeading">
+                            <h3 class="overlayHeading">OPERATION & MAINTENANCE</h3>
+                        </div>
+                        <ul>
+                            <li>Asset management optimization.</li>
+                            <li>Improvement in O&M costs and performance.</li>
+                        </ul>
+                    </div>
+                    <h3 class="cardtext">OPERATION<br>&<br>MAINTENANCE</h3>
+                </div>
+            </section>
+            <section id="large">
+                <div class="businessCardOverlay" style="background-color: #F5DFFF;">
+                    <div class="cardHeading">
+                        <h3 class="overlayHeading">DEVELOPMENT</h3>
+                    </div>
+                    <ul>
+                        <li>Full scope development activities – technical , financial, legal and tax advisory.</li>
+                        <li>Drafting and negotiating PPA’s, shareholder agreements, land leases and concession
+                            agreements.</li>
+                        <li>Creation of a detailed financial model and perform sensitivity analyses to support
+                            investment decisions.</li>
+                        <li>Obtaining all necessary agreements, permits and licenses whilst liaising with local public
+                            authorities to secure authorizations.</li>
+                        <li>Development phase financing available.</li>
+                    </ul>
+                </div>
+                <h3 class="cardtext">DEVELOPMENT</h3>
+            </section>
+        </section>
+        <section class="whyChoose"
+            style="background-image: url('./Resources/empty-business-meeting-conference-room-with-graphs-diagrams-tv-background\ 1.png');">
+            <div class="bgImg" style="background-image: url('./Resources/Group.png');"></div>
+            <div class="whyChooseOverlay">
+                <h2>WHY CHOOSE US?</h2>
+                <p><strong>Diverse Expertise:</strong> With proficiency in Building Construction, Real Estate, Energy,
+                    Investment, and Technology, we offer comprehensive solutions for various industries, ensuring your
+                    needs are met under one roof. <br><br><strong>Innovative Solutions:</strong> Our forward-thinking
+                    approach drives us to pioneer cutting-edge innovations, empowering your projects with the latest
+                    technologies and sustainable practices. <br><br><strong>Professional Excellence:</strong> We are
+                    committed to delivering the highest standards of professionalism, ensuring that every aspect of our
+                    services is carried out with precision and dedication. <br><br><strong>Visionary Growth:</strong> At
+                    Laimunati Group, we inspire progress and growth, transforming opportunities into success stories and
+                    envisioning a brighter future for our clients and partners. <br><br><strong>Experienced
+                        Team:</strong> Our skilled professionals bring years of experience and expertise to the table,
+                    ensuring that your projects are guided by the best minds in the industry.
+                </p>
+            </div>
+        </section>
+        <section class="contactUs" id="contactus">
+            <h2>CONTACT US TODAY!</h2>
+            <p>Have a project in mind or want to explore how we can collaborate? We would love to hear from you. Reach
+                out to us today and let's embark on a journey of empowerment and visionary success together</p>
+            <form>
+                <div class="formOverlay">
+                    <input type="text" name="Name" id="name" required='required' onchange="handleInputChange()"><label for="name">Name</label>
+                    <input type="text" name="Email" id="email" ><label for="email">Email
+                        Address</label>
+                    <input type="text" name="Subject" id="subject" required='required' onchange="handleInputChange()"><label
+                        for="subject">Subject</label>
+                    <textarea name="Message" id="message" cols="30" rows="10" required='required' onchange="handleInputChange()"></textarea><label
+                        for="message">Message</label>
+                    <button id='sendMessage'>Send Message</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+            <nav id="footnav1">
+                <label class="sign">
+                    <figure class="logo" style="background-image: url('./Resources/logo.png');"></figure>
+                    <h5 class="logoName">LAIMUNATI</h5>
+                </label>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./AboutUs/index.html">About Us</a></li>
+                    <li><a href="">Our Businesses</a></li>
+                    <li><a href="#contactus">Contact Us</a></li>
+                </ul>
+            </nav>
+            <nav id="footnav2">
+                <ul>
+                    <li><a href="./Build/index.html">Build</a></li>
+                    <li><a href="./Energy/index.html">Energy</a></li>
+                    <li><a href="./Investments/index.html">Investments</a></li>
+                    <li><a href="./Technology/index.html">Technology</a></li>
+                </ul>
+                <ul id="emailaddress">
+                    <li>Email: <a href="mailto: contact@laimunati.com">contact@laimunati.com</a></li>
+                </ul>
+            </nav>
+            <nav id="footnav3">
+                <ul>
+                    <li>Copyright © Lamunati Group</li>
+                    <li>Terms of Use Privacy Policy</li>
+                    <li>Powered by - The #1 Open Source eCommerce</li>
+                </ul>
+            </nav>
+        </footer>
+    </main>
+</body>
+<script type="text/javascript">
+
+    const scrollWidth = screen.width < 500 ? 340 : screen.width < 1275 ? 700 : 1245
+
+    const handleInputChange = () => {
+       if (document.getElementById('name').value && document.getElementById('subject').value && document.getElementById('message')) {
+        document.getElementById('sendMessage').addEventListener('click', () => {
+        window.open(`mailto: contact@laimunati.com?subject=${document.getElementById('subject').value}&body=${document.getElementById('message').value}\n sent by ${document.getElementById('name').value}&cc=${document.getElementById('email').value ? document.getElementById('email').value : null}`, '_self')
+    })
+       }
+    }
+
+    
+
+    const sandwichButton = document.getElementById('sandwich')
+  
+    sandwichButton.addEventListener('click', () => {
+        document.getElementById('fullOverlay').style.display = 'block'
+        document.getElementById('fullOverlay').style.backgroundColor = '#0000007f'
+        document.getElementById('fullOverlay').style.transition = 'all 2s ease'
+    })
+
+    document.addEventListener('click', (event) => {
+        if (!sandwichButton.contains(event.target)) {
+            document.getElementById('fullOverlay').style.display = 'none'
+        }
+    })
+
+    let logos = document.getElementsByClassName('sign')
+    for(let i = 0; i < logos.length; i++) {
+        logos[i].addEventListener('click', () => {
+            window.open('./index.html', '_self')
+        })
+    }
+
+
+    let carouselFocus = false
+    const carouselContainer = document.getElementsByClassName('carouselContainer')[0]
+    // set boolean variable for mouseover on carousel
+    carouselContainer.addEventListener('mouseenter', () => {
+        carouselFocus = true
+    })
+    carouselContainer.addEventListener('mouseleave', () => {
+        carouselFocus = false
+    })
+
+    const buttons = document.getElementsByClassName('slideBtn')
+
+    function changeSliderNav(event) {
+        //set all slider nav buttons to white
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].style.backgroundColor = 'white'
+        }
+        // set only target color to red
+        event.target.style.backgroundColor = '#b5281d'
+        event.target.style.border = '1px solid white'
+    }
+
+    //add event listeners to all slider nav buttons
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', changeSliderNav)
+    }
+
+
+    setInterval(() => {
+        if (!carouselFocus) {
+            document.getElementById('scroll').scrollBy({
+                top: 0,
+                left: scrollWidth,
+                behavior: 'smooth'
+            })
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].style.backgroundColor = 'white'
+            }
+
+            if (document.getElementById('scroll').scrollLeft > scrollWidth * 2.5) {
+                document.getElementById('scroll').scrollLeft = 0
+            }
+            const currentBtn = Math.floor(document.getElementById('scroll').scrollLeft / scrollWidth)
+            //alert(currentBtn)
+            buttons[currentBtn >= 3 ? 0 : currentBtn + 1].style.backgroundColor = '#b5281d'
+            buttons[currentBtn >= 3 ? 0 : currentBtn + 1].style.border = '1px solid white'
+        }
+
+    }, 5000)
+
+</script>
+
+</html>
